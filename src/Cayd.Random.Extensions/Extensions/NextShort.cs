@@ -5,9 +5,9 @@
         /// <summary>
         /// Returns a random 16-bit integer.
         /// </summary>
-        /// <returns>A 16-bit signed integer that is between <see cref="Int16.MinValue"/> and <see cref="Int16.MaxValue"/>.</returns>
+        /// <returns>A 16-bit signed integer that is between <see cref="short.MinValue"/> and <see cref="short.MaxValue"/>.</returns>
         public static short NextShort(this System.Random random)
-            => (short)random.Next(Int16.MinValue, Int16.MaxValue);
+            => (short)random.Next(short.MinValue, short.MaxValue);
 
         /// <summary>
         /// Returns a random 16-bit integer within a specified range.

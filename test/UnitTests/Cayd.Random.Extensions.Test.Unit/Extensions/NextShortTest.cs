@@ -10,8 +10,8 @@
 
             // Assert
             Assert.IsType<short>(result);
-            Assert.True(result >= Int16.MinValue, $"Result: {result}, Min Value: {Int16.MinValue}");
-            Assert.True(result <= Int16.MaxValue, $"Result: {result}, Max Value: {Int16.MaxValue}");
+            Assert.True(result >= short.MinValue, $"Result: {result}, Min Value: {short.MinValue}");
+            Assert.True(result <= short.MaxValue, $"Result: {result}, Max Value: {short.MaxValue}");
         }
 
         [Theory]

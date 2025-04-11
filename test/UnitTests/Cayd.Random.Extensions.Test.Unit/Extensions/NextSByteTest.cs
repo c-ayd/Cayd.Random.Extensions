@@ -10,8 +10,8 @@
 
             // Assert
             Assert.IsType<sbyte>(result);
-            Assert.True(result >= SByte.MinValue, $"Result: {result}, Min Value: {SByte.MinValue}");
-            Assert.True(result <= SByte.MaxValue, $"Result: {result}, Max Value: {SByte.MaxValue}");
+            Assert.True(result >= sbyte.MinValue, $"Result: {result}, Min Value: {sbyte.MinValue}");
+            Assert.True(result <= sbyte.MaxValue, $"Result: {result}, Max Value: {sbyte.MaxValue}");
         }
 
         [Theory]

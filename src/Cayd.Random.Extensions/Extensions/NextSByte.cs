@@ -5,9 +5,9 @@
         /// <summary>
         /// Returns a random 8-bit integer.
         /// </summary>
-        /// <returns>An 8-bit signed integer that is between <see cref="SByte.MinValue"/> and <see cref="SByte.MaxValue"/>.</returns>
+        /// <returns>An 8-bit signed integer that is between <see cref="sbyte.MinValue"/> and <see cref="sbyte.MaxValue"/>.</returns>
         public static sbyte NextSByte(this System.Random random)
-            => (sbyte)random.Next(SByte.MinValue, SByte.MaxValue);
+            => (sbyte)random.Next(sbyte.MinValue, sbyte.MaxValue);
 
         /// <summary>
         /// Returns a random 8-bit integer within a specified range.

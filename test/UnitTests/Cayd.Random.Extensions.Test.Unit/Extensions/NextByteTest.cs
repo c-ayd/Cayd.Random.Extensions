@@ -10,8 +10,8 @@
 
             // Assert
             Assert.IsType<byte>(result);
-            Assert.True(result >= Byte.MinValue, $"Result: {result}, Min Value: {Byte.MinValue}");
-            Assert.True(result <= Byte.MaxValue, $"Result: {result}, Max Value: {Byte.MaxValue}");
+            Assert.True(result >= byte.MinValue, $"Result: {result}, Min Value: {byte.MinValue}");
+            Assert.True(result <= byte.MaxValue, $"Result: {result}, Max Value: {byte.MaxValue}");
         }
 
         [Theory]

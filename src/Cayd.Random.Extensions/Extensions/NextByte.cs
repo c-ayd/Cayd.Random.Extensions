@@ -5,9 +5,9 @@
         /// <summary>
         /// Returns a non-negative random 8-bit integer.
         /// </summary>
-        /// <returns>A 8-bit unsigned integer that is between <see cref="Byte.MinValue"/> and <see cref="Byte.MaxValue"/>.</returns>
+        /// <returns>A 8-bit unsigned integer that is between <see cref="byte.MinValue"/> and <see cref="byte.MaxValue"/>.</returns>
         public static byte NextByte(this System.Random random)
-            => (byte)random.Next(Byte.MinValue, Byte.MaxValue);
+            => (byte)random.Next(byte.MinValue, byte.MaxValue);
 
         /// <summary>
         /// Returns a non-negative random 8-bit integer within a specified range.
