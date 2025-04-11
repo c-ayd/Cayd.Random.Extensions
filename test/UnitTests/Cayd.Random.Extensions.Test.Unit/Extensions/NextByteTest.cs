@@ -16,7 +16,7 @@
 
         [Theory]
         [InlineData(5, 10)]
-        [InlineData(0, 255)]
+        [InlineData(byte.MinValue, byte.MaxValue)]
         public void NextByte_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(byte min, byte max)
         {
             // Act

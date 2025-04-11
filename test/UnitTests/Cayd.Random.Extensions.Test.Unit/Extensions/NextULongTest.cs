@@ -16,7 +16,7 @@
 
         [Theory]
         [InlineData(5, 10)]
-        [InlineData(0, 18446744073709551615)]
+        [InlineData(ulong.MinValue, ulong.MaxValue)]
         public void NextULong_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(ulong min, ulong max)
         {
             // Act

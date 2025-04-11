@@ -16,7 +16,7 @@
 
         [Theory]
         [InlineData(-10, 10)]
-        [InlineData(-2147483648, 2147483647)]
+        [InlineData(int.MinValue, int.MaxValue)]
         public void NextInt_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(int min, int max)
         {
             // Act

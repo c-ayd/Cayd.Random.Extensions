@@ -16,7 +16,7 @@
 
         [Theory]
         [InlineData(-10, 10)]
-        [InlineData(-32768, 32767)]
+        [InlineData(short.MinValue, short.MaxValue)]
         public void NextShort_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(short min, short max)
         {
             // Act

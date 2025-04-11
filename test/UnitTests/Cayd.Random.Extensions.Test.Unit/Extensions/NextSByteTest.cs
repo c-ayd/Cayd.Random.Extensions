@@ -16,7 +16,7 @@
 
         [Theory]
         [InlineData(-10, 10)]
-        [InlineData(-128, 127)]
+        [InlineData(sbyte.MinValue, sbyte.MaxValue)]
         public void NextSByte_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(sbyte min, sbyte max)
         {
             // Act
