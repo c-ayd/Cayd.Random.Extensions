@@ -1,4 +1,6 @@
-﻿namespace Cayd.Random.Extensions
+﻿using System;
+
+namespace Cayd.Random.Extensions
 {
     public static partial class RandomExtensions
     {
@@ -7,7 +9,11 @@
         /// </summary>
         /// <returns>A 32-bit unsigned integer that is between <see cref="uint.MinValue"/> and <see cref="uint.MaxValue"/>.</returns>
         public static uint NextUInt(this System.Random random)
+#if NET6_0_OR_GREATER
             => (uint)random.NextInt64(uint.MinValue, uint.MaxValue);
+#else
+            => random.NextUInt(uint.MinValue, uint.MaxValue);
+#endif
 
         /// <summary>
         /// Returns a non-negative random 32-bit integer within a specified range.
@@ -20,6 +26,20 @@
         /// </returns>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="minValue"/> is greater than <paramref name="maxValue"/>.</exception>
         public static uint NextUInt(this System.Random random, uint minValue, uint maxValue)
+#if NET6_0_OR_GREATER
             => (uint)random.NextInt64(minValue, maxValue);
+#else
+        {
+            if (maxValue < minValue)
+                throw new ArgumentOutOfRangeException(nameof(minValue), minValue, $"{nameof(minValue)} cannot be greater than {nameof(maxValue)}");
+            else if (minValue == maxValue)
+                return minValue;
+
+            if (maxValue > int.MaxValue)
+                return (uint)(random.NextDouble() * (maxValue - minValue) + minValue);
+
+            return (uint)random.Next((int)minValue, (int)maxValue);
+        }
+#endif
     }
 }

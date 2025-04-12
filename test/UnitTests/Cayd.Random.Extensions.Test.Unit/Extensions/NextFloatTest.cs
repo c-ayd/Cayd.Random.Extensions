@@ -1,12 +1,17 @@
-﻿namespace Cayd.Random.Extensions.Test.Unit.Extensions
+﻿using Xunit;
+
+namespace Cayd.Random.Extensions.Test.Unit.Extensions
 {
     public class NextFloatTest
     {
         [Fact]
         public void NextFloat_WhenRangeIsNotGiven_ShouldReturnValueWithinFloatRangeWithSameType()
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextFloat();
+            var result = rnd.NextFloat();
 
             // Assert
             Assert.IsType<float>(result);
@@ -19,8 +24,11 @@
         [InlineData(float.MinValue, float.MaxValue)]
         public void NextFloat_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(float min, float max)
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextFloat(min, max);
+            var result = rnd.NextFloat(min, max);
 
             // Assert
             Assert.IsType<float>(result);

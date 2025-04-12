@@ -1,12 +1,17 @@
-﻿namespace Cayd.Random.Extensions.Test.Unit.Extensions
+﻿using Xunit;
+
+namespace Cayd.Random.Extensions.Test.Unit.Extensions
 {
     public class NextULongTest
     {
         [Fact]
         public void NextULong_WhenRangeIsNotGiven_ShouldReturnValueWithinULongRangeWithSameType()
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextULong();
+            var result = rnd.NextULong();
 
             // Assert
             Assert.IsType<ulong>(result);
@@ -19,8 +24,11 @@
         [InlineData(ulong.MinValue, ulong.MaxValue)]
         public void NextULong_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(ulong min, ulong max)
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextULong(min, max);
+            var result = rnd.NextULong(min, max);
 
             // Assert
             Assert.IsType<ulong>(result);

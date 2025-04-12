@@ -1,4 +1,6 @@
-﻿namespace Cayd.Random.Extensions
+﻿using System;
+
+namespace Cayd.Random.Extensions
 {
     public static partial class RandomExtensions
     {
@@ -27,7 +29,11 @@
                 return minValue;
 
             if (minValue >= 0.0f || maxValue <= 0.0f)
+#if NET6_0_OR_GREATER
                 return (random.NextSingle() * (maxValue - minValue)) + minValue;
+#else
+                return ((float)random.NextDouble() * (maxValue - minValue)) + minValue;
+#endif
 
             float numerator, denominator;
             if (maxValue > Math.Abs(minValue))
@@ -42,10 +48,17 @@
             }
 
             float ratio = Math.Abs(numerator / denominator);
+#if NET6_0_OR_GREATER
             if (random.NextBool(ratio))
                 return random.NextSingle() * numerator;
 
             return random.NextSingle() * denominator;
+#else
+            if (random.NextBool(ratio))
+                return (float)random.NextDouble() * numerator;
+
+            return (float)random.NextDouble() * denominator;
+#endif
         }
     }
 }

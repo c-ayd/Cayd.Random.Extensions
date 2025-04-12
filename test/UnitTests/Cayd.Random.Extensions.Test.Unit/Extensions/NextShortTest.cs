@@ -1,12 +1,17 @@
-﻿namespace Cayd.Random.Extensions.Test.Unit.Extensions
+﻿using Xunit;
+
+namespace Cayd.Random.Extensions.Test.Unit.Extensions
 {
     public class NextShortTest
     {
         [Fact]
         public void NextShort_WhenRangeIsNotGiven_ShouldReturnValueWithinShortRangeWithSameType()
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextShort();
+            var result = rnd.NextShort();
 
             // Assert
             Assert.IsType<short>(result);
@@ -19,8 +24,11 @@
         [InlineData(short.MinValue, short.MaxValue)]
         public void NextShort_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(short min, short max)
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextShort(min, max);
+            var result = rnd.NextShort(min, max);
 
             // Assert
             Assert.IsType<short>(result);

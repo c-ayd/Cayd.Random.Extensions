@@ -1,12 +1,17 @@
-﻿namespace Cayd.Random.Extensions.Test.Unit.Extensions
+﻿using Xunit;
+
+namespace Cayd.Random.Extensions.Test.Unit.Extensions
 {
     public class NextSByteTest
     {
         [Fact]
         public void NextSByte_WhenRangeIsNotGiven_ShouldReturnValueWithinSByteRangeWithSameType()
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextSByte();
+            var result = rnd.NextSByte();
 
             // Assert
             Assert.IsType<sbyte>(result);
@@ -19,8 +24,11 @@
         [InlineData(sbyte.MinValue, sbyte.MaxValue)]
         public void NextSByte_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(sbyte min, sbyte max)
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextSByte(min, max);
+            var result = rnd.NextSByte(min, max);
 
             // Assert
             Assert.IsType<sbyte>(result);

@@ -1,12 +1,17 @@
-﻿namespace Cayd.Random.Extensions.Test.Unit.Extensions
+﻿using Xunit;
+
+namespace Cayd.Random.Extensions.Test.Unit.Extensions
 {
     public class NextDoubleTest
     {
         [Fact]
         public void NextDoubleLimits_WhenRangeIsNotGiven_ShouldReturnValueWithinDoubleRangeWithSameType()
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextDoubleLimits();
+            var result = rnd.NextDoubleLimits();
 
             // Assert
             Assert.IsType<double>(result);
@@ -19,8 +24,11 @@
         [InlineData(double.MinValue, double.MaxValue)]
         public void NextDouble_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(double min, double max)
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextDouble(min, max);
+            var result = rnd.NextDouble(min, max);
 
             // Assert
             Assert.IsType<double>(result);

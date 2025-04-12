@@ -1,12 +1,17 @@
-﻿namespace Cayd.Random.Extensions.Test.Unit.Extensions
+﻿using Xunit;
+
+namespace Cayd.Random.Extensions.Test.Unit.Extensions
 {
     public class NextDecimalTest
     {
         [Fact]
         public void NextDecimal_WhenRangeIsNotGiven_ShouldReturnValueWithinDecimalRangeWithSameType()
         {
+            // Arrange
+            var rnd = new System.Random();
+
             // Act
-            var result = System.Random.Shared.NextDecimal();
+            var result = rnd.NextDecimal();
 
             // Assert
             Assert.IsType<decimal>(result);
@@ -18,10 +23,11 @@
         public void NextDecimal_WhenRangeIsNotOnBoundaries_ShouldReturnValueWithinRangeWithSameType()
         {
             // Arrange
+            var rnd = new System.Random();
             decimal min = -10.0m, max = 10.0m;
 
             // Act
-            var result = System.Random.Shared.NextDecimal(min, max);
+            var result = rnd.NextDecimal(min, max);
 
             // Assert
             Assert.IsType<decimal>(result);
@@ -33,10 +39,11 @@
         public void NextDecimal_WhenRangeIsOnBoundaries_ShouldReturnValueWithinRangeWithSameType()
         {
             // Arrange
+            var rnd = new System.Random();
             decimal min = decimal.MinValue, max = decimal.MaxValue;
 
             // Act
-            var result = System.Random.Shared.NextDecimal(min, max);
+            var result = rnd.NextDecimal(min, max);
 
             // Assert
             Assert.IsType<decimal>(result);

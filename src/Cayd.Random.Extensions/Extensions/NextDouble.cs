@@ -1,4 +1,6 @@
-﻿namespace Cayd.Random.Extensions
+﻿using System;
+
+namespace Cayd.Random.Extensions
 {
     public static partial class RandomExtensions
     {
