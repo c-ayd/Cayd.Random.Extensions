@@ -1,4 +1,6 @@
-﻿namespace Cayd.Random.Extensions
+﻿using System;
+
+namespace Cayd.Random.Extensions
 {
     public static partial class RandomExtensions
     {
@@ -21,5 +23,18 @@
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="minValue"/> is greater than <paramref name="maxValue"/>.</exception>
         public static int NextInt(this System.Random random, int minValue, int maxValue)
             => random.Next(minValue, maxValue);
+
+        /// <summary>
+        /// Returns a random 32-bit integer that is less than the specified maximum.
+        /// </summary>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">The exclusive lower bound of the random number returned. maxValue must be greater than or equal to 0.</param>
+        /// <returns>
+        /// A 32-bit signed integer greater than or equal to 0 and less than <paramref name="maxValue"/>; that is, the range of return values ordinarily includes 0
+        /// but not <paramref name="maxValue"/>. However, <paramref name="maxValue"/> equalts to 0, 0 is returned.
+        /// </returns>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maxValue"/> is less than 0.</exception>
+        public static int NextInt(this System.Random random, int maxValue)
+            => random.Next(maxValue);
     }
 }
