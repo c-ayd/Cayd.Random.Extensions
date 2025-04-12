@@ -20,7 +20,7 @@ namespace Cayd.Random.Extensions.Test.Unit.Extensions
         }
 
         [Theory]
-        [InlineData(5, 10)]
+        [InlineData(5u, 10u)]
         [InlineData(uint.MinValue, uint.MaxValue)]
         public void NextUInt_WhenRangeIsGiven_ShouldReturnValueWithinRangeWithSameType(uint min, uint max)
         {
@@ -34,6 +34,22 @@ namespace Cayd.Random.Extensions.Test.Unit.Extensions
             Assert.IsType<uint>(result);
             Assert.True(result >= min, $"Result: {result}, Min Value: {min}");
             Assert.True(result <= max, $"Result: {result}, Max Value: {max}");
+        }
+
+        [Theory]
+        [InlineData(10u)]
+        [InlineData(uint.MaxValue)]
+        public void NextUInt_WhenOnlyMaxValueIsGiven_ShouldReturnValueBetweenZeroAndMaxWithSameType(uint max)
+        {
+            // Arrange
+            var rnd = new System.Random();
+
+            // Act
+            var result = rnd.NextUInt(max);
+
+            // Assert
+            Assert.IsType<uint>(result);
+            Assert.True(result >= 0u && result <= max, $"Result: {result}, Max Value: {max}");
         }
     }
 }
