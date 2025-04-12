@@ -50,5 +50,33 @@ namespace Cayd.Random.Extensions.Test.Unit.Extensions
             Assert.True(result >= min, $"Result: {result}, Min Value: {min}");
             Assert.True(result <= max, $"Result: {result}, Max Value: {max}");
         }
+
+        [Fact]
+        public void NextDecimal_WhenOnlyMaxValueIsGiven_ShouldReturnValueBetweenZeroAndMaxWithSameType()
+        {
+            // Arrange
+            var rnd = new System.Random();
+
+            // Act
+            var result = rnd.NextDecimal(10m);
+
+            // Assert
+            Assert.IsType<decimal>(result);
+            Assert.True(result <= 10m, $"Result: {result}, Max Value: 10");
+        }
+
+        [Fact]
+        public void NextDecimal_WhenOnlyMaxValueIsGivenAndMaxIsDecimalMax_ShouldReturnValueBetweenZeroAndMaxWithSameType()
+        {
+            // Arrange
+            var rnd = new System.Random();
+
+            // Act
+            var result = rnd.NextDecimal(decimal.MaxValue);
+
+            // Assert
+            Assert.IsType<decimal>(result);
+            Assert.True(result <= decimal.MaxValue, $"Result: {result}, Max Value: {decimal.MaxValue}");
+        }
     }
 }
