@@ -49,7 +49,7 @@ namespace Cayd.Random.Extensions.Test.Unit.Extensions
 
             // Assert
             Assert.IsType<float>(result);
-            Assert.True(result <= max, $"Result: {result}, Max Value: {max}");
+            Assert.True(result >= 0.0f && result <= max, $"Result: {result}, Max Value: {max}");
         }
     }
 }

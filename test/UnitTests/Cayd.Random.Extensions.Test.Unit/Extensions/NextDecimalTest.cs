@@ -76,7 +76,7 @@ namespace Cayd.Random.Extensions.Test.Unit.Extensions
 
             // Assert
             Assert.IsType<decimal>(result);
-            Assert.True(result <= decimal.MaxValue, $"Result: {result}, Max Value: {decimal.MaxValue}");
+            Assert.True(result >= 0m && result <= decimal.MaxValue, $"Result: {result}, Max Value: {decimal.MaxValue}");
         }
     }
 }
