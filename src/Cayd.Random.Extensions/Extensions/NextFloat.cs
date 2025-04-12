@@ -7,7 +7,7 @@
         /// </summary>
         /// <returns>A single precision floating point number that is between <see cref="float.MinValue"/> and <see cref="float.MaxValue"/>.</returns>
         public static float NextFloat(this System.Random random)
-            => (float)(random.NextDouble() * ((double)float.MaxValue - (double)float.MinValue) + (double)float.MinValue);
+            => random.NextFloat(float.MinValue, float.MaxValue);
 
         /// <summary>
         /// Returns a random floating point number within a specified range.
@@ -20,6 +20,32 @@
         /// </returns>
         /// <exception cref="ArgumentOutOfRangeException"><paramref name="minValue"/> is greater than <paramref name="maxValue"/>.</exception>
         public static float NextFloat(this System.Random random, float minValue, float maxValue)
-            => (float)(random.NextDouble() * ((double)maxValue - (double)minValue) + (double)minValue);
+        {
+            if (maxValue < minValue)
+                throw new ArgumentOutOfRangeException(nameof(minValue), minValue, $"{nameof(minValue)} cannot be greater than {nameof(maxValue)}");
+            else if (minValue == maxValue)
+                return minValue;
+
+            if (minValue >= 0.0 || maxValue <= 0.0f)
+                return (random.NextSingle() * (maxValue - minValue)) + minValue;
+
+            float numerator, denominator;
+            if (maxValue > Math.Abs(minValue))
+            {
+                numerator = minValue;
+                denominator = maxValue;
+            }
+            else
+            {
+                numerator = maxValue;
+                denominator = minValue;
+            }
+
+            float ratio = Math.Abs(numerator / denominator);
+            if (random.NextBool(ratio))
+                return random.NextSingle() * numerator;
+
+            return random.NextSingle() * denominator;
+        }
     }
 }
