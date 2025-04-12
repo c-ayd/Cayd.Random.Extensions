@@ -46,5 +46,18 @@ namespace Cayd.Random.Extensions
 
             return (higherBits << 32) | lowerBits;
         }
+
+        /// <summary>
+        /// Returns a non-negative random 64-bit integer within a specified range.
+        /// </summary>
+        /// <param name="minValue">The inclusive lower bound of the random number returned.</param>
+        /// <param name="maxValue">The exclusive lower bound of the random number returned. maxValue must be greater than or equal to 0.</param>
+        /// <returns>
+        /// A 64-bit unsigned integer greater than or equal to 0 and less than <paramref name="maxValue"/>; that is, the range of return values ordinarily includes 0
+        /// but not <paramref name="maxValue"/>. However, <paramref name="maxValue"/> equalts to 0, 0 is returned.
+        /// </returns>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="maxValue"/> is less than 0.</exception>
+        public static ulong NextULong(this System.Random random, ulong maxValue)
+            => random.NextULong(0uL, maxValue);
     }
 }
