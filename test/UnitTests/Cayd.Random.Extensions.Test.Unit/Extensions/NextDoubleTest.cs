@@ -35,5 +35,21 @@ namespace Cayd.Random.Extensions.Test.Unit.Extensions
             Assert.True(result >= min, $"Result: {result}, Min Value: {min}");
             Assert.True(result <= max, $"Result: {result}, Max Value: {max}");
         }
+
+        [Theory]
+        [InlineData(10.0)]
+        [InlineData(double.MaxValue)]
+        public void NextDouble_WhenOnlyMaxValueIsGiven_ShouldReturnValueBetweenZeroAndMaxWithSameType(double max)
+        {
+            // Arrange
+            var rnd = new System.Random();
+
+            // Act
+            var result = rnd.NextDouble(max);
+
+            // Assert
+            Assert.IsType<double>(result);
+            Assert.True(result <= max, $"Result: {result}, Max Value: {max}");
+        }
     }
 }
