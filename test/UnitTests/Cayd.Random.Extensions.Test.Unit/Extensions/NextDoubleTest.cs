@@ -3,7 +3,7 @@
     public class NextDoubleTest
     {
         [Fact]
-        public void NextDouble_WhenRangeIsNotGiven_ShouldReturnValueWithinDoubleRangeWithSameType()
+        public void NextDoubleLimits_WhenRangeIsNotGiven_ShouldReturnValueWithinDoubleRangeWithSameType()
         {
             // Act
             var result = System.Random.Shared.NextDoubleLimits();

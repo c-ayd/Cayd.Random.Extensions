@@ -26,7 +26,7 @@
             else if (minValue == maxValue)
                 return minValue;
 
-            if (minValue >= 0.0 || maxValue <= 0.0f)
+            if (minValue >= 0.0f || maxValue <= 0.0f)
                 return (random.NextSingle() * (maxValue - minValue)) + minValue;
 
             float numerator, denominator;
