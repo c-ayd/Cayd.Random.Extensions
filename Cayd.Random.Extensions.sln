@@ -16,9 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{06747F7F-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{A61ED7F0-3ED9-42DF-8608-DDF86E6F1BA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayd.Random.Extensions", "src\Cayd.Random.Extensions\Cayd.Random.Extensions.csproj", "{EA36F5D5-4F6D-474E-ABFD-8B4E8FF44B13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cayd.Random.Extensions", "src\Cayd.Random.Extensions\Cayd.Random.Extensions.csproj", "{EA36F5D5-4F6D-474E-ABFD-8B4E8FF44B13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cayd.Random.Extensions.Test.Unit", "test\UnitTests\Cayd.Random.Extensions.Test.Unit\Cayd.Random.Extensions.Test.Unit.csproj", "{2D6C3986-EEFC-44FE-9E41-D86ED581FF29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cayd.Random.Extensions.Test.Unit", "test\UnitTests\Cayd.Random.Extensions.Test.Unit\Cayd.Random.Extensions.Test.Unit.csproj", "{2D6C3986-EEFC-44FE-9E41-D86ED581FF29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{A351A10C-46D3-4132-B7BB-F0BAE861EF7E}"
+	ProjectSection(SolutionItems) = preProject
+		assets\nuget-logo.png = assets\nuget-logo.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

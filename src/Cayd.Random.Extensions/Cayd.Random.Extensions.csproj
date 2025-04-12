@@ -2,6 +2,36 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net6.0;net5.0;netstandard2.0</TargetFrameworks>
+    <PackageId>Cayd.Random.Extensions</PackageId>
+    <Title>System.Random Extensions</Title>
+    <Version>1.0.0</Version>
+    <Authors>Cemal A. Aydeniz</Authors>
+    <Product>RandomExtensions</Product>
+    <Description>Extension methods for System.Random class</Description>
+    <PackageProjectUrl>https://github.com/c-ayd/Cayd.Random.Extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/c-ayd/Cayd.Random.Extensions.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>cayd;random;extension;system;extensions;next;random-extensions</PackageTags>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>nuget-logo.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\nuget-logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
