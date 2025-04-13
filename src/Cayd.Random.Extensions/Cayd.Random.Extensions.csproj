@@ -4,7 +4,7 @@
     <TargetFrameworks>net8.0;net6.0;net5.0;netstandard2.0</TargetFrameworks>
     <PackageId>Cayd.Random.Extensions</PackageId>
     <Title>System.Random Extensions</Title>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Cemal A. Aydeniz</Authors>
     <Product>RandomExtensions</Product>
     <Description>Extension methods for System.Random class</Description>
@@ -13,10 +13,11 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cayd;random;extension;system;extensions;next;random-extensions</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>API documentation is added</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageIcon>nuget-logo.png</PackageIcon>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
