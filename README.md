@@ -25,7 +25,7 @@ ulong rndUlong = Random.Shared.NextULong(5000000uL);
 
 ## Extensions
 - Parameterless methods returns a random value between the type's min and max values.
-- Methods with one parameter return a random value between 0 and the type's max value.
+- Methods with one parameter return a random value between 0 and a specified max value.
 - Methods with two parameters return a random value within a specified range.
 
 Type      | (No Parameter)     | Only Max              | Min and Max
@@ -43,8 +43,8 @@ Type      | (No Parameter)     | Only Max              | Min and Max
 `decimal` | NextDecimal()      | NextDecimal(maxValue) | NextDecimal(minValue, maxValue)
 
 For boolean:
-- The parameterless method returns a random boolean value with a 50% change of being `true`.
-- The method with one parameter returns a random boolean value with a specified change of being `true`.
+- The parameterless method returns a random boolean value with a 50% chance of being `true`.
+- The method with one parameter returns a random boolean value with a specified chance of being `true`.
 
 Type   | (No Parameter) | Probability
 -------|----------------|----------------------
